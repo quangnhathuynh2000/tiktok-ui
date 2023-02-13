@@ -2,7 +2,7 @@ import classNames from "classnames/bind";
 import styles from './Button.module.scss'
 import { Link } from 'react-router-dom'
 const cx = classNames.bind(styles)
-function Button({ to, rightIcon, leftIcon, rounded = false, disable = false, text = false, small = false, large = false, href, onClick, outline = false, children, primary = false, className, ...passProps }) {
+function Button({ to, rightIcon, leftIcon, rounded = false, disable = false, text = false, small = false, large = false, href, outline = false, children, primary = false, className, onClick, ...passProps }) {
     let Comp = 'button';
     const props = {
         onClick,
