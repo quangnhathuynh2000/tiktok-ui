@@ -2,23 +2,25 @@ import classNames from "classnames/bind";
 import styles from './Accoutitem.module.scss'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
+import Image from '~/components/Image'
+import { Link } from 'react-router-dom'
 
 const cx = classNames.bind(styles)
-function AccoutItem() {
+function AccoutItem({ data }) {
     return (
-        <div className={cx('wrapper')}>
-            <img className={cx('avatar')} src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/ff6cfa684d7eb1c00409c4214d8ab62f~c5_300x300.webp?x-expires=1676354400&x-signature=Sti%2BY6GUoNB0Z9ylEmP5pZiufwI%3D" alt="quang" />
+        <Link to={`/@${data.nickname}`} className={cx('wrapper')}>
+            <Image className={cx('avatar')} src={data.avatar} alt={data.full_name} />
             <div className={cx('info')}>
                 <h4 className={cx('name')} >
                     <span>
-                        Nguyễn văn A
+                        {data.full_name}
                     </span>
-                    <FontAwesomeIcon className={cx('check')} icon={faCheckCircle} />
+                    {data.tick && <FontAwesomeIcon className={cx('check')} icon={faCheckCircle} />}
                 </h4>
 
-                <span className={cx('username')}>nguyenvana</span>
+                <span className={cx('username')}>{data.nickname}</span>
             </div>
-        </div >
+        </Link >
     );
 }
 
