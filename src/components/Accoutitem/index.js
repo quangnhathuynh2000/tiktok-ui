@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import Image from '~/components/Image'
 import { Link } from 'react-router-dom'
+import ProTypes from 'prop-types'
+
 
 const cx = classNames.bind(styles)
 function AccoutItem({ data }) {
@@ -22,6 +24,9 @@ function AccoutItem({ data }) {
             </div>
         </Link >
     );
+}
+AccoutItem.ProTypes = {
+    data: ProTypes.object.isRequired
 }
 
 export default AccoutItem;
